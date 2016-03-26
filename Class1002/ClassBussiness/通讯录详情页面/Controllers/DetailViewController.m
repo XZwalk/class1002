@@ -22,6 +22,9 @@
 //    self.imageView.image = _contact.con_image;
     self.name.text = _contact.con_name;
     self.phone.text = _contact.con_phone;
+    self.nowPlace.text = _contact.con_nowPlace;
+    
+    
     //设置编辑按钮
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     //关闭控件交互
@@ -54,6 +57,8 @@
     self.imageView.userInteractionEnabled = enabled;
     self.name.userInteractionEnabled = enabled;
     self.phone.userInteractionEnabled = enabled;
+    self.nowPlace.userInteractionEnabled = enabled;
+
 }
 - (IBAction)handlePicture:(UITapGestureRecognizer *)sender {
     //提供 相册 以及 拍照 两种读取图片的功能.

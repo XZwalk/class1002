@@ -11,6 +11,7 @@
 #import "Contact.h"
 #import "NSString+Addtion.h"
 
+#define kDataFinishNSNotification  @"dataFinish"
 
 @interface DataBaseHelper ()
 
@@ -106,6 +107,11 @@ static DataBaseHelper *helper = nil;
     //获取到排好序的key值
     self.orderedKeys = [[[self.addressDic allKeys] sortedArrayUsingSelector:@selector(compare:)] mutableCopy];
     //8.释放操作数据库时的系统资源
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDataFinishNSNotification object:nil];
+    
     sqlite3_finalize(stmt);
     //9.关闭shujuk
     [DataBase closeDataBase];

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Class1002/Helpers/DataBaseHelper.m"
-            timestampString = "480614431.450909"
+            filePath = "Class1002/ClassBussiness/&#x901a;&#x8baf;&#x5f55;&#x5217;&#x8868;&#x9875;&#x9762;/Controllers/AddressListViewController.m"
+            timestampString = "480699333.418526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "-readDataFromDataBase"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-requestContactData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

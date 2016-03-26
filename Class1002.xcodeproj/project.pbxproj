@@ -15,8 +15,9 @@
 		FE1A02181CA2E2EA00A6319A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1A02161CA2E2EA00A6319A /* LaunchScreen.storyboard */; };
 		FE641D5F1CA5907D007BA170 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE641D5C1CA5907D007BA170 /* ProgressHUD.bundle */; };
 		FE641D601CA5907D007BA170 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FE641D5E1CA5907D007BA170 /* ProgressHUD.m */; };
+		FE8F2C281CA6A47C0094D195 /* AddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2C271CA6A47C0094D195 /* AddressListViewController.m */; };
+		FE8F2C321CA6E0E80094D195 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2C2F1CA6E0E80094D195 /* DetailViewController.m */; };
 		FED0B70A1CA5628D00C274B9 /* AddressListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B7051CA5628D00C274B9 /* AddressListController.m */; };
-		FED0B70C1CA5628D00C274B9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B7091CA5628D00C274B9 /* DetailViewController.m */; };
 		FED0B7171CA5635800C274B9 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B7101CA5635800C274B9 /* BaseNavigationController.m */; };
 		FED0B7181CA5635800C274B9 /* NSString+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B7131CA5635800C274B9 /* NSString+Addtion.m */; };
 		FED0B7191CA5635800C274B9 /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B7151CA5635800C274B9 /* UIColor+Addition.m */; };
@@ -70,10 +71,14 @@
 		FE641D5C1CA5907D007BA170 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		FE641D5D1CA5907D007BA170 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		FE641D5E1CA5907D007BA170 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		FE8F2C261CA6A47C0094D195 /* AddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressListViewController.h; sourceTree = "<group>"; };
+		FE8F2C271CA6A47C0094D195 /* AddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressListViewController.m; sourceTree = "<group>"; };
+		FE8F2C2E1CA6E0E80094D195 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		FE8F2C2F1CA6E0E80094D195 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		FE8F2C381CA6E2E50094D195 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		FE8F2C391CA6E3870094D195 /* Class_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Class_Prefix.pch; sourceTree = "<group>"; };
 		FED0B7041CA5628D00C274B9 /* AddressListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressListController.h; sourceTree = "<group>"; };
 		FED0B7051CA5628D00C274B9 /* AddressListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressListController.m; sourceTree = "<group>"; };
-		FED0B7081CA5628D00C274B9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		FED0B7091CA5628D00C274B9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		FED0B70F1CA5635800C274B9 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		FED0B7101CA5635800C274B9 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		FED0B7121CA5635800C274B9 /* NSString+Addtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Addtion.h"; sourceTree = "<group>"; };
@@ -174,6 +179,8 @@
 			children = (
 				FE1A020B1CA2E2EA00A6319A /* AppDelegate.h */,
 				FE1A020C1CA2E2EA00A6319A /* AppDelegate.m */,
+				FE8F2C211CA6A41E0094D195 /* ClassBussiness */,
+				FE8F2C331CA6E12B0094D195 /* Others */,
 				FED0B7031CA5628D00C274B9 /* Controllers */,
 				FED0B70D1CA5635800C274B9 /* General */,
 				FED0B7B01CA563B400C274B9 /* Helpers */,
@@ -193,6 +200,7 @@
 		FE1A02081CA2E2EA00A6319A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE8F2C391CA6E3870094D195 /* Class_Prefix.pch */,
 				FE1A02091CA2E2EA00A6319A /* main.m */,
 			);
 			name = "Supporting Files";
@@ -208,13 +216,102 @@
 			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
+		FE8F2C211CA6A41E0094D195 /* ClassBussiness */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2C221CA6A41E0094D195 /* 通讯录列表页面 */,
+				FE8F2C2C1CA6E0E80094D195 /* 通讯录详情页面 */,
+			);
+			path = ClassBussiness;
+			sourceTree = "<group>";
+		};
+		FE8F2C221CA6A41E0094D195 /* 通讯录列表页面 */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2C231CA6A41E0094D195 /* Controllers */,
+				FE8F2C241CA6A41E0094D195 /* Models */,
+				FE8F2C251CA6A41E0094D195 /* Views */,
+			);
+			path = "通讯录列表页面";
+			sourceTree = "<group>";
+		};
+		FE8F2C231CA6A41E0094D195 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2C261CA6A47C0094D195 /* AddressListViewController.h */,
+				FE8F2C271CA6A47C0094D195 /* AddressListViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FE8F2C241CA6A41E0094D195 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FE8F2C251CA6A41E0094D195 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE8F2C2C1CA6E0E80094D195 /* 通讯录详情页面 */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2C2D1CA6E0E80094D195 /* Controllers */,
+				FE8F2C301CA6E0E80094D195 /* Models */,
+				FE8F2C311CA6E0E80094D195 /* Views */,
+			);
+			path = "通讯录详情页面";
+			sourceTree = "<group>";
+		};
+		FE8F2C2D1CA6E0E80094D195 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2C2E1CA6E0E80094D195 /* DetailViewController.h */,
+				FE8F2C2F1CA6E0E80094D195 /* DetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FE8F2C301CA6E0E80094D195 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FE8F2C311CA6E0E80094D195 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE8F2C331CA6E12B0094D195 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2C341CA6E12B0094D195 /* HeaderDefine */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		FE8F2C341CA6E12B0094D195 /* HeaderDefine */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F2C381CA6E2E50094D195 /* Macros.h */,
+			);
+			path = HeaderDefine;
+			sourceTree = "<group>";
+		};
 		FED0B7031CA5628D00C274B9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FED0B7041CA5628D00C274B9 /* AddressListController.h */,
 				FED0B7051CA5628D00C274B9 /* AddressListController.m */,
-				FED0B7081CA5628D00C274B9 /* DetailViewController.h */,
-				FED0B7091CA5628D00C274B9 /* DetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -548,6 +645,7 @@
 				FED0B7A61CA5638300C274B9 /* Contact.m in Sources */,
 				FED0B7171CA5635800C274B9 /* BaseNavigationController.m in Sources */,
 				FED0B70A1CA5628D00C274B9 /* AddressListController.m in Sources */,
+				FE8F2C281CA6A47C0094D195 /* AddressListViewController.m in Sources */,
 				FED0B7AB1CA5639000C274B9 /* ChineseToPinyin.m in Sources */,
 				FED0B7AF1CA5639A00C274B9 /* AddressCell.m in Sources */,
 				FED0B7181CA5635800C274B9 /* NSString+Addtion.m in Sources */,
@@ -555,7 +653,7 @@
 				FE1A020D1CA2E2EA00A6319A /* AppDelegate.m in Sources */,
 				FED0B7B51CA563B400C274B9 /* DataBase.m in Sources */,
 				FE1A020A1CA2E2EA00A6319A /* main.m in Sources */,
-				FED0B70C1CA5628D00C274B9 /* DetailViewController.m in Sources */,
+				FE8F2C321CA6E0E80094D195 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +764,8 @@
 			baseConfigurationReference = DB4C0BC5D8A23F545DBD610C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Class1002/Class_Prefix.pch";
 				INFOPLIST_FILE = Class1002/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiangzi.com.Class1002;
@@ -678,6 +778,8 @@
 			baseConfigurationReference = B737BC70183E0802C3075F8F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Class1002/Class_Prefix.pch";
 				INFOPLIST_FILE = Class1002/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiangzi.com.Class1002;

@@ -5,7 +5,6 @@
 //  Created by lanouhn on 15-2-3.
 //  Copyright (c) 2015年 XZH. All rights reserved.
 //
-#define kDataBaseName @"addressBook.sqlite"
 #import "DataBase.h"
 
 @implementation DataBase

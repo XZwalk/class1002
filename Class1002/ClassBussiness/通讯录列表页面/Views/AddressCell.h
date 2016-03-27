@@ -14,4 +14,8 @@
 @property (retain, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (nonatomic, retain) Contact *contact;//存储传入的Contact对象
 
+@property (strong, nonatomic) IBOutlet UILabel *isHaveFamilyLabel
+;
+
+
 @end

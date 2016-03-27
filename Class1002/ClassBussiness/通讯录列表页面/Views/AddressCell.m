@@ -16,6 +16,7 @@
 //    self.photoView.image = contact.con_image;
     self.nameLabel.text = contact.con_name;
     self.phoneLabel.text = contact.con_phone;
+    self.isHaveFamilyLabel.text = [NSString stringWithFormat:@"%ld", contact.con_isHaveFamily];
 }
 
 - (void)awakeFromNib {

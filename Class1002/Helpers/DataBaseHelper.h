@@ -44,6 +44,11 @@
 //更新联系人,contact -- 修改之后的联系人对象  sourceName -- 修改之前的联系人姓名
 + (void)updateContact:(Contact *)contact withSourceName:(NSString *)sourceName;
 
+
++ (void)readDataFromDataBase;
+
++ (void)createTableInDataBase;
+
 @end
 
 

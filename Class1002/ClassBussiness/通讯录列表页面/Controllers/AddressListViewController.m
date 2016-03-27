@@ -10,11 +10,11 @@
 #import "AddressCell.h"
 #import "DataBaseHelper.h"
 #import "DetailViewController.h"
-
+#import "ContactServer.h"
 
 @interface AddressListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-
+@property (strong, nonatomic) ContactServer *contactSever;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -28,6 +28,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNSNotification) name:kDataFinishNSNotification object:nil];
     
+    
+    _contactSever = [[ContactServer alloc] init];
     
     if ([self isNeedRequestDataFromServer]) {
         [self requestContactData];
@@ -63,34 +65,14 @@
 
 - (void)requestContactData {
     
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURL *url = [NSURL URLWithString:@"http://7xrdjn.com1.z0.glb.clouddn.com/addressBook.sqlite"];
-    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (data) {
-            [self writeNewsAtFirstPage:data toLocalFile:@"addressBook.sqlite"];
-        }
-    }];
-    
-    [task resume];
-}
 
-- (void)writeNewsAtFirstPage:(NSData *)fileData toLocalFile:(NSString *)fileName {
-    NSString * fullPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    fullPath = [fullPath stringByAppendingPathComponent:fileName];
-    
-    if (NO == [[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
-        if (NO == [[NSFileManager defaultManager] createFileAtPath:fullPath contents:nil attributes:nil]) {
-            NSLog(@"------------------file create fail------------------");
-        }
-    }
-    
-    if (NO == [fileData writeToFile:fullPath atomically:YES]) {
-        NSLog(@"------------------file write fail------------------");
-    }else
-    {
+    [_contactSever requestContactListData:^(id resultObject) {
+        [DataBaseHelper readDataFromDataBase];
         
-        NSLog(@"------------------file write success------------------");
-    }
+    } fail:^(id resultObject) {
+        
+        
+    }];
 }
 
 

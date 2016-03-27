@@ -48,8 +48,8 @@ static DataBaseHelper *helper = nil;
     @synchronized(self) {
         if (!helper) {
             helper = [[DataBaseHelper alloc] init];
-            [self createTableInDataBase];//创建表
-            [helper readDataFromDataBase];
+//            [self createTableInDataBase];//创建表
+//            [helper readDataFromDataBase];
         }
     }
     return helper;
@@ -64,9 +64,13 @@ static DataBaseHelper *helper = nil;
     [DataBase closeDataBase];
 }
 //从数据库中读取数据
-- (void)readDataFromDataBase {
++ (void)readDataFromDataBase {
     //5.获取指令集
-    sqlite3_stmt *stmt = [[self class] createSelectStatement];
+    sqlite3_stmt *stmt = [self createSelectStatement];
+    
+    
+    
+    NSMutableDictionary *addressDic = [DataBaseHelper sharedHelper].addressDic;
     //6.绑定SQL语句中的参数，对应？
     //7.执行SQL语句，对数据库操作。
     //对于查询操作，会有多条数据，通过while循环一条一条取出
@@ -74,6 +78,7 @@ static DataBaseHelper *helper = nil;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         //获取表中的一条数据,0代表表中的索引
         NSInteger iD = sqlite3_column_int(stmt, 0);
+        NSInteger isHaveFam = sqlite3_column_int(stmt, 6);
         char *con_name = (char *)sqlite3_column_text(stmt, 2);
         char *con_phone = (char *)sqlite3_column_text(stmt, 3);
         char *con_nowPlace = (char *)sqlite3_column_text(stmt, 4);
@@ -87,25 +92,30 @@ static DataBaseHelper *helper = nil;
         NSString *phone = [NSString stringWithUTF8String:con_phone];
         NSString *imageStr = [NSString stringWithUTF8String:con_image];
 
-        Contact *contact = [Contact contactWithConID:iD conName:name conSection:section conPhone:phone conNowPlace:nowPlace conImage:imageStr];
+        Contact *contact = [Contact contactWithConID:iD conName:name conSection:section conPhone:phone conNowPlace:nowPlace conImage:imageStr conHaveFam:isHaveFam];
+        
+
+        
         //获取分组名称
         NSString *key = [contact.con_name firstElement];
         //根据key从字典中取出对应的数组
-        NSMutableArray *groupArr = self.addressDic[key];
+        NSMutableArray *groupArr = addressDic[key];
         //如果groupArr为空说明之前字典中没有对应的分组，则创建
         if (!groupArr) {
             //创建数组
             groupArr = [NSMutableArray arrayWithCapacity:1];
             //将元素添加到字典中
-            [self.addressDic setObject:groupArr forKey:key];
+            [addressDic setObject:groupArr forKey:key];
         }
         //将contact对象放进数组中
         [groupArr addObject:contact];
         
     }
     
+     ;
+
     //获取到排好序的key值
-    self.orderedKeys = [[[self.addressDic allKeys] sortedArrayUsingSelector:@selector(compare:)] mutableCopy];
+    [DataBaseHelper sharedHelper].orderedKeys = [[[addressDic allKeys] sortedArrayUsingSelector:@selector(compare:)] mutableCopy];
     //8.释放操作数据库时的系统资源
     
     
@@ -118,24 +128,39 @@ static DataBaseHelper *helper = nil;
 }
 //提供返回分区个数的接口
 + (NSInteger)numberOfSections {
-    return [self sharedHelper].orderedKeys.count;
-    //return [self sharedHelper].addressDic.allValues.count;
+    NSMutableArray *orderedKeys = [DataBaseHelper sharedHelper].orderedKeys;
+    return orderedKeys.count;
 }
 //提供返回分区对应行数的接口
 + (NSInteger)numberOfRowsInSection:(NSInteger)section {
-    return [helper.addressDic[helper.orderedKeys[section]] count];
+    NSMutableArray *orderedKeys = [DataBaseHelper sharedHelper].orderedKeys;
+    NSMutableDictionary *addressDic = [DataBaseHelper sharedHelper].addressDic;
+    NSString *key = orderedKeys[section];
+    
+    return [addressDic[key] count];
 }
 //提供返回分区对应的title的方法
 + (NSString *)titleForHeaderInSection:(NSInteger)section {
-    return helper.orderedKeys[section];
+    NSMutableArray *orderedKeys = [DataBaseHelper sharedHelper].orderedKeys;
+    NSString *key = orderedKeys[section];
+
+    return key;
 }
 //提供tableView分区所以的方法
 + (NSArray *)sectionIndexTitles {
-    return helper.orderedKeys;
+    NSMutableArray *orderedKeys = [DataBaseHelper sharedHelper].orderedKeys;
+
+    return orderedKeys;
 }
 //提供返回数据对象的接口
 + (Contact *)contactIndextPath:(NSIndexPath *)indexPath {
-    return helper.addressDic[helper.orderedKeys[indexPath.section]][indexPath.row];
+    NSMutableArray *orderedKeys = [DataBaseHelper sharedHelper].orderedKeys;
+    NSMutableDictionary *addressDic = [DataBaseHelper sharedHelper].addressDic;
+    NSString *key = orderedKeys[indexPath.section];
+    NSArray *sectionArray = addressDic[key];
+    Contact *contact = sectionArray[indexPath.row];
+    
+    return contact;
 }
 //返回是否需要删除分区
 + (BOOL)isNeedToDeleteSection:(NSInteger)section {

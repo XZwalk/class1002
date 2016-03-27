@@ -11,6 +11,7 @@
 @interface Contact : NSObject
 
 @property (nonatomic, assign) NSInteger con_id;//存储唯一标识
+@property (nonatomic, assign) NSInteger con_isHaveFamily;//有家属的为1, 没有的为0
 @property (nonatomic, copy) NSString *con_section;
 @property (nonatomic, copy) NSString *con_name;
 @property (nonatomic, copy) NSString *con_phone;
@@ -18,9 +19,9 @@
 @property (nonatomic, copy) NSString *con_imageStr;
 
 //提供自定义的初始化方法
-- (instancetype)initWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage;
+- (instancetype)initWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage conHaveFam:(NSInteger)conHaveFam;
 //便利构造器
-+ (instancetype)contactWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage;
++ (instancetype)contactWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage conHaveFam:(NSInteger)conHaveFam;
 
 
 

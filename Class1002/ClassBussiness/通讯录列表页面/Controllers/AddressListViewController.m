@@ -136,6 +136,9 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     //通过视图控制器与视图控制器之间的桥，跳转到下一界面
     [self performSegueWithIdentifier:@"push" sender:indexPath];
     NSLog(@"AAAAA");

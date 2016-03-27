@@ -93,7 +93,13 @@
                             <constraint firstItem="YSy-pr-gdd" firstAttribute="top" secondItem="0Yx-Cs-NTi" secondAttribute="bottom" id="ciQ-vP-DOD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WSv-8N-GIv"/>
+                    <navigationItem key="navigationItem" id="WSv-8N-GIv">
+                        <barButtonItem key="rightBarButtonItem" title="刷新" id="M80-bu-mis">
+                            <connections>
+                                <action selector="refreshAction:" destination="05F-lG-Pnv" id="l7I-28-43W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YSy-pr-gdd" id="ZdC-Rt-Wkr"/>
                         <segue destination="Wgj-KQ-39n" kind="push" identifier="push" id="rni-rU-ecc"/>

@@ -11,7 +11,7 @@
 #import "DataBaseHelper.h"
 #import "DetailViewController.h"
 #import "ContactServer.h"
-
+#import "ProgressHUD.h"
 @interface AddressListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) ContactServer *contactSever;
@@ -33,6 +33,8 @@
     
     if ([self isNeedRequestDataFromServer]) {
         [self requestContactData];
+    } else {
+        [DataBaseHelper readDataFromDataBase];
     }
     
 }
@@ -65,14 +67,24 @@
 
 - (void)requestContactData {
     
+    [ProgressHUD show:@"正在请求"];
 
     [_contactSever requestContactListData:^(id resultObject) {
         [DataBaseHelper readDataFromDataBase];
+        [ProgressHUD dismiss];
         
     } fail:^(id resultObject) {
         
         
     }];
+}
+
+#pragma mark - eventRespond
+
+- (IBAction)refreshAction:(UIBarButtonItem *)sender {
+    
+    [self requestContactData];
+    
 }
 
 

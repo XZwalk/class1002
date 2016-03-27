@@ -71,6 +71,9 @@ static DataBaseHelper *helper = nil;
     
     
     NSMutableDictionary *addressDic = [DataBaseHelper sharedHelper].addressDic;
+    
+    [addressDic removeAllObjects];
+    
     //6.绑定SQL语句中的参数，对应？
     //7.执行SQL语句，对数据库操作。
     //对于查询操作，会有多条数据，通过while循环一条一条取出

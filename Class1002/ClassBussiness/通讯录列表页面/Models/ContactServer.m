@@ -12,7 +12,6 @@
 #define kRequestSuccess   @"成功"
 #define kRequestFaild     @"失败"
 
-#define kRequestContactUrl  @"http://7xrdjn.com1.z0.glb.clouddn.com/addressBook.sqlite?v=%@"
 
 
 @implementation ContactServer
@@ -21,7 +20,7 @@
 - (void)requestContactListData:(RequestSuccess)requestSuccess fail:(RequestFaild)requestFaild {
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSString *timeStr = [self getTimestampStr];
+    NSString *timeStr = [Tools getTimestampStr];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:kRequestContactUrl, timeStr]];
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -81,13 +80,5 @@
     }
 }
 
-
-- (NSString *)getTimestampStr {
-    NSDate *dateNow = [NSDate date];
-    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[dateNow timeIntervalSince1970]];
-    DLog(@"%@", timeSp);
-    
-    return timeSp;
-}
 
 @end

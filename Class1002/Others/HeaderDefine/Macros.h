@@ -17,7 +17,6 @@
 
 #ifdef TC_IOS_DEBUG
 
-
 #define DLog(fmt, ...) \
 NSLog(@"%@(%d)\n%s: " fmt, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], \
 __LINE__, \
@@ -26,7 +25,6 @@ __PRETTY_FUNCTION__,## __VA_ARGS__)
 #else
 
 #define DLog(...);
-
 
 #endif
 
@@ -44,11 +42,12 @@ typedef void(^RequestFaild)(id resultObject);
 
 
 
-
-
-
 #define kDataBaseName              @"addressBook.sqlite"
-#define kDataFinishNSNotification  @"dataFinish"
+
+
+
+#define kDataFinishNSNotification            @"dataFinish"
+#define kInitializeInfoFinishNSNotification  @"initializeInfoFinish"
 
 
 #endif /* Macros_h */

@@ -8,6 +8,9 @@
 
 #import "AddressCell.h"
 #import "Contact.h"
+#import "HXInitializeInfoManager.h"
+
+
 @implementation AddressCell
 //重写setter方法，完成控件的赋值操作
 - (void)setContact:(Contact *)contact {
@@ -16,7 +19,11 @@
 //    self.photoView.image = contact.con_image;
     self.nameLabel.text = contact.con_name;
     self.phoneLabel.text = contact.con_phone;
-    self.isHaveFamilyLabel.text = [NSString stringWithFormat:@"%ld", contact.con_isHaveFamily];
+    
+    if ([HXInitializeInfoManager shareInstance].isShowFaimly) {
+        self.isHaveFamilyLabel.text = [NSString stringWithFormat:@"%ld", contact.con_isHaveFamily];
+    }
+    
 }
 
 - (void)awakeFromNib {

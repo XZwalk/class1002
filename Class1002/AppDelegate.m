@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "HXInitializeInfoManager.h"
 
 
 @interface AppDelegate ()
@@ -19,7 +19,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self initHFT];
+    
+    
     return YES;
+}
+
+#pragma mark - private api
+- (void)initHFT {
+    [[HXInitializeInfoManager shareInstance] requestInitializeInfo];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

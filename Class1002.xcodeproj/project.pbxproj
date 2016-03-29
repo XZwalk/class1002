@@ -16,6 +16,8 @@
 		FE641D5F1CA5907D007BA170 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE641D5C1CA5907D007BA170 /* ProgressHUD.bundle */; };
 		FE641D601CA5907D007BA170 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FE641D5E1CA5907D007BA170 /* ProgressHUD.m */; };
 		FE779C681CA77E4F00728B1F /* ContactServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FE779C671CA77E4F00728B1F /* ContactServer.m */; };
+		FE88E2C81CA82241009F0CE9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88E2C71CA82241009F0CE9 /* Tools.m */; };
+		FE88E2CC1CA82435009F0CE9 /* HXInitializeInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88E2CB1CA82435009F0CE9 /* HXInitializeInfoManager.m */; };
 		FE8F2C281CA6A47C0094D195 /* AddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2C271CA6A47C0094D195 /* AddressListViewController.m */; };
 		FE8F2C321CA6E0E80094D195 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2C2F1CA6E0E80094D195 /* DetailViewController.m */; };
 		FE8F2C3C1CA6E9470094D195 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2C3B1CA6E9470094D195 /* Contact.m */; };
@@ -75,6 +77,11 @@
 		FE641D5E1CA5907D007BA170 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		FE779C661CA77E4F00728B1F /* ContactServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactServer.h; sourceTree = "<group>"; };
 		FE779C671CA77E4F00728B1F /* ContactServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactServer.m; sourceTree = "<group>"; };
+		FE88E2C61CA82241009F0CE9 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		FE88E2C71CA82241009F0CE9 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
+		FE88E2C91CA82283009F0CE9 /* RequestUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestUrl.h; sourceTree = "<group>"; };
+		FE88E2CA1CA82435009F0CE9 /* HXInitializeInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXInitializeInfoManager.h; sourceTree = "<group>"; };
+		FE88E2CB1CA82435009F0CE9 /* HXInitializeInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXInitializeInfoManager.m; sourceTree = "<group>"; };
 		FE8F2C261CA6A47C0094D195 /* AddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressListViewController.h; sourceTree = "<group>"; };
 		FE8F2C271CA6A47C0094D195 /* AddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressListViewController.m; sourceTree = "<group>"; };
 		FE8F2C2E1CA6E0E80094D195 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -184,6 +191,8 @@
 			children = (
 				FE1A020B1CA2E2EA00A6319A /* AppDelegate.h */,
 				FE1A020C1CA2E2EA00A6319A /* AppDelegate.m */,
+				FE88E2CA1CA82435009F0CE9 /* HXInitializeInfoManager.h */,
+				FE88E2CB1CA82435009F0CE9 /* HXInitializeInfoManager.m */,
 				FE8F2C211CA6A41E0094D195 /* ClassBussiness */,
 				FE8F2C331CA6E12B0094D195 /* Others */,
 				FED0B7031CA5628D00C274B9 /* Controllers */,
@@ -217,6 +226,15 @@
 				FE641D5E1CA5907D007BA170 /* ProgressHUD.m */,
 			);
 			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		FE88E2C51CA82228009F0CE9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				FE88E2C61CA82241009F0CE9 /* Tools.h */,
+				FE88E2C71CA82241009F0CE9 /* Tools.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		FE8F2C211CA6A41E0094D195 /* ClassBussiness */ = {
@@ -312,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				FE8F2C381CA6E2E50094D195 /* Macros.h */,
+				FE88E2C91CA82283009F0CE9 /* RequestUrl.h */,
 			);
 			path = HeaderDefine;
 			sourceTree = "<group>";
@@ -418,6 +437,7 @@
 		FED0B70D1CA5635800C274B9 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				FE88E2C51CA82228009F0CE9 /* Tools */,
 				FED0B70E1CA5635800C274B9 /* BaseClass */,
 				FED0B7111CA5635800C274B9 /* Category */,
 			);
@@ -644,6 +664,7 @@
 				FED0B7191CA5635800C274B9 /* UIColor+Addition.m in Sources */,
 				FE641D601CA5907D007BA170 /* ProgressHUD.m in Sources */,
 				FED0B7171CA5635800C274B9 /* BaseNavigationController.m in Sources */,
+				FE88E2C81CA82241009F0CE9 /* Tools.m in Sources */,
 				FED0B70A1CA5628D00C274B9 /* AddressListController.m in Sources */,
 				FE8F2C3C1CA6E9470094D195 /* Contact.m in Sources */,
 				FE8F2C281CA6A47C0094D195 /* AddressListViewController.m in Sources */,
@@ -652,6 +673,7 @@
 				FED0B7B61CA563B400C274B9 /* DataBaseHelper.m in Sources */,
 				FE1A020D1CA2E2EA00A6319A /* AppDelegate.m in Sources */,
 				FE779C681CA77E4F00728B1F /* ContactServer.m in Sources */,
+				FE88E2CC1CA82435009F0CE9 /* HXInitializeInfoManager.m in Sources */,
 				FED0B7B51CA563B400C274B9 /* DataBase.m in Sources */,
 				FE1A020A1CA2E2EA00A6319A /* main.m in Sources */,
 				FE8F2C3F1CA6EE2D0094D195 /* AddressCell.m in Sources */,

@@ -26,8 +26,8 @@
     // Do any additional setup after loading the view.
     
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNSNotification) name:kDataFinishNSNotification object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataFinishNSNotification) name:kDataFinishNSNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInitializeInfoNSNotification) name:kInitializeInfoFinishNSNotification object:nil];
     
     _contactSever = [[ContactServer alloc] init];
     
@@ -46,6 +46,8 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kDataFinishNSNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kInitializeInfoFinishNSNotification object:nil];
+
 }
 
 #pragma mark - private api
@@ -90,13 +92,13 @@
 
 
 #pragma mark - NSNotificationCenter
-- (void)handleNSNotification {
-    
+- (void)handleDataFinishNSNotification {
     [self.tableView reloadData];
-    
 }
 
-
+- (void)handleInitializeInfoNSNotification {
+    [self.tableView reloadData];
+}
 
 #pragma mark - UITableViewDelegate
 

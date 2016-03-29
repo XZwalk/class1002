@@ -141,6 +141,9 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    
+    //张祥   名字换掉
+    
     //通过视图控制器与视图控制器之间的桥，跳转到下一界面
     [self performSegueWithIdentifier:@"push" sender:indexPath];
     NSLog(@"AAAAA");
@@ -155,6 +158,9 @@
     if ([segue.identifier isEqualToString:@"push"]) {
         DetailViewController *detailVC = segue.destinationViewController;
         detailVC.contact = [DataBaseHelper contactIndextPath:sender];
+        
+        AddressCell *cell = [self.tableView cellForRowAtIndexPath:sender];
+        detailVC.photo = cell.photoView.image;
         NSLog(@"BBBB");
     }
 }

@@ -15,8 +15,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *nowPlace;
 
-
 @property (retain, nonatomic) Contact *contact;//存储前一个界面传来的contact对象
-
+@property (retain, nonatomic) UIImage *photo;//图片从列表页面获取, 然后传入详情页面
 
 @end

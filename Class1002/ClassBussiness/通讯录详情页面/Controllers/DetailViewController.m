@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //为自身控件赋值
-//    self.imageView.image = _contact.con_image;
+    self.imageView.image = self.photo;
     self.name.text = _contact.con_name;
     self.phone.text = _contact.con_phone;
     self.nowPlace.text = _contact.con_nowPlace;

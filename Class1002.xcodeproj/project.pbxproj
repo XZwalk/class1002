@@ -58,6 +58,9 @@
 		FED0B7B51CA563B400C274B9 /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B7B21CA563B400C274B9 /* DataBase.m */; };
 		FED0B7B61CA563B400C274B9 /* DataBaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FED0B7B41CA563B400C274B9 /* DataBaseHelper.m */; };
 		FED0B7B81CA5654100C274B9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FED0B7B71CA5654100C274B9 /* libsqlite3.0.tbd */; };
+		FED1E7DE1CAEAE8900976B64 /* ShareListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED1E7DD1CAEAE8900976B64 /* ShareListViewController.m */; };
+		FED1E7E11CAEAEBE00976B64 /* ShareListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FED1E7E01CAEAEBE00976B64 /* ShareListCell.m */; };
+		FED1E7E81CAEB4C300976B64 /* ShareListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED1E7E71CAEB4C300976B64 /* ShareListDetailViewController.m */; };
 		FED276521CAACA890022A07A /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FED276321CAACA890022A07A /* MKAnnotationView+WebCache.m */; };
 		FED276531CAACA890022A07A /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = FED276341CAACA890022A07A /* NSData+ImageContentType.m */; };
 		FED276541CAACA890022A07A /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FED276361CAACA890022A07A /* SDImageCache.m */; };
@@ -151,6 +154,12 @@
 		FED0B7B31CA563B400C274B9 /* DataBaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseHelper.h; sourceTree = "<group>"; };
 		FED0B7B41CA563B400C274B9 /* DataBaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseHelper.m; sourceTree = "<group>"; };
 		FED0B7B71CA5654100C274B9 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		FED1E7DC1CAEAE8900976B64 /* ShareListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareListViewController.h; sourceTree = "<group>"; };
+		FED1E7DD1CAEAE8900976B64 /* ShareListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareListViewController.m; sourceTree = "<group>"; };
+		FED1E7DF1CAEAEBE00976B64 /* ShareListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareListCell.h; sourceTree = "<group>"; };
+		FED1E7E01CAEAEBE00976B64 /* ShareListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareListCell.m; sourceTree = "<group>"; };
+		FED1E7E61CAEB4C300976B64 /* ShareListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareListDetailViewController.h; sourceTree = "<group>"; };
+		FED1E7E71CAEB4C300976B64 /* ShareListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareListDetailViewController.m; sourceTree = "<group>"; };
 		FED276311CAACA890022A07A /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		FED276321CAACA890022A07A /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		FED276331CAACA890022A07A /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -291,6 +300,8 @@
 			children = (
 				FE8F2C221CA6A41E0094D195 /* 通讯录列表页面 */,
 				FE8F2C2C1CA6E0E80094D195 /* 通讯录详情页面 */,
+				FED1E7D81CAEAE5900976B64 /* 分享列表页面 */,
+				FED1E7E21CAEB48D00976B64 /* 分享列表详情页面 */,
 			);
 			path = ClassBussiness;
 			sourceTree = "<group>";
@@ -560,6 +571,75 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		FED1E7D81CAEAE5900976B64 /* 分享列表页面 */ = {
+			isa = PBXGroup;
+			children = (
+				FED1E7D91CAEAE5900976B64 /* Controllers */,
+				FED1E7DA1CAEAE5900976B64 /* Models */,
+				FED1E7DB1CAEAE5900976B64 /* Views */,
+			);
+			path = "分享列表页面";
+			sourceTree = "<group>";
+		};
+		FED1E7D91CAEAE5900976B64 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FED1E7DC1CAEAE8900976B64 /* ShareListViewController.h */,
+				FED1E7DD1CAEAE8900976B64 /* ShareListViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FED1E7DA1CAEAE5900976B64 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FED1E7DB1CAEAE5900976B64 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FED1E7DF1CAEAEBE00976B64 /* ShareListCell.h */,
+				FED1E7E01CAEAEBE00976B64 /* ShareListCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FED1E7E21CAEB48D00976B64 /* 分享列表详情页面 */ = {
+			isa = PBXGroup;
+			children = (
+				FED1E7E31CAEB48D00976B64 /* Controllers */,
+				FED1E7E41CAEB48D00976B64 /* Models */,
+				FED1E7E51CAEB48D00976B64 /* Views */,
+			);
+			name = "分享列表详情页面";
+			path = "通讯录详情页面/分享列表详情页面";
+			sourceTree = "<group>";
+		};
+		FED1E7E31CAEB48D00976B64 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FED1E7E61CAEB4C300976B64 /* ShareListDetailViewController.h */,
+				FED1E7E71CAEB4C300976B64 /* ShareListDetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FED1E7E41CAEB48D00976B64 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FED1E7E51CAEB48D00976B64 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FED276301CAACA890022A07A /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -755,7 +835,10 @@
 				FED0B7191CA5635800C274B9 /* UIColor+Addition.m in Sources */,
 				FE641D601CA5907D007BA170 /* ProgressHUD.m in Sources */,
 				FED2765A1CAACA890022A07A /* SDWebImagePrefetcher.m in Sources */,
+				FED1E7DE1CAEAE8900976B64 /* ShareListViewController.m in Sources */,
 				FED276611CAACA890022A07A /* UIView+WebCacheOperation.m in Sources */,
+				FED1E7E11CAEAEBE00976B64 /* ShareListCell.m in Sources */,
+				FED1E7E81CAEB4C300976B64 /* ShareListDetailViewController.m in Sources */,
 				FED0B7171CA5635800C274B9 /* BaseNavigationController.m in Sources */,
 				FE88E2C81CA82241009F0CE9 /* Tools.m in Sources */,
 				FED2765D1CAACA890022A07A /* UIImage+MultiFormat.m in Sources */,

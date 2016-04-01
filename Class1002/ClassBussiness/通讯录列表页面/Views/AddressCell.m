@@ -21,7 +21,7 @@
     NSString *urlStr = [NSString stringWithFormat:kRequestImageUrl, contact.con_imageStr];
     NSURL *url = [NSURL URLWithString:urlStr];
     
-    
+    //480*640   60*80
     // 张祥   图片加载是否需要更新, 需要再增加一个字段来控制, 上面方法整理
     [self.photoView sd_setImageWithURL:url  placeholderImage:[UIImage imageNamed:@"AppIcon40x40.png"] options:SDWebImageRefreshCached];
     

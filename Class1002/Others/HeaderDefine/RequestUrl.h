@@ -17,8 +17,7 @@
 #define kRequestImageUrl  @"http://7xrdjn.com1.z0.glb.clouddn.com/addressBook_%@.jpg"
 
 
-
-
+#define kRequestShareListUrl    @"http://7xsg4k.com1.z0.glb.clouddn.com/ios_shareListInfo.txt?v=%@"
 
 
 

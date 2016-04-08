@@ -264,23 +264,18 @@ static DataBaseHelper *helper = nil;
 //    [DataBase closeDataBase];
 //}
 ////更新数据库中的数据
-//+ (void)updateDataBaseWithContact:(Contact *)contact {
-//    sqlite3_stmt *stmt = [self createUpdateStatement];
-//    
-//    sqlite3_bind_text(stmt, 1, [contact.con_name UTF8String], -1, nil);
-//    sqlite3_bind_text(stmt, 2, [contact.con_gendar UTF8String], -1, nil);
-//    sqlite3_bind_text(stmt, 3, [contact.con_age UTF8String], -1, nil);
-//    sqlite3_bind_text(stmt, 4, [contact.con_phone UTF8String], -1, nil);
-//    sqlite3_bind_text(stmt, 5, [contact.con_motto UTF8String], -1, nil);
-//    NSData *data = UIImagePNGRepresentation(contact.con_image);
-//    sqlite3_bind_blob(stmt, 6, data.bytes, (int)data.length, nil);
-//    sqlite3_bind_int(stmt, 7, (int)contact.con_id);
-//    if (sqlite3_step(stmt) == SQLITE_DONE) {
-//        NSLog(@"更新数据库");
-//    }
-//    sqlite3_finalize(stmt);
-//    [DataBase closeDataBase];
-//}
++ (void)updateDataBaseWithContact:(Contact *)contact {
+    sqlite3_stmt *stmt = [self createUpdateStatement];
+    
+    sqlite3_bind_text(stmt, 1, [contact.con_name UTF8String], -1, nil);
+    sqlite3_bind_text(stmt, 4, [contact.con_phone UTF8String], -1, nil);
+    sqlite3_bind_int(stmt, 7, (int)contact.con_id);
+    if (sqlite3_step(stmt) == SQLITE_DONE) {
+        NSLog(@"更新数据库");
+    }
+    sqlite3_finalize(stmt);
+    [DataBase closeDataBase];
+}
 //能够统计所有联系人个数
 + (NSInteger)totalNumberOfContacts {
     NSInteger totalCount = 0;//存储总的联系人数

@@ -12,6 +12,11 @@
 #import "DetailViewController.h"
 #import "ContactServer.h"
 #import "ProgressHUD.h"
+#import <QiniuSDK.h>
+#import "QiniuPutPolicy.h"
+
+
+
 @interface AddressListViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) ContactServer *contactSever;
@@ -81,6 +86,16 @@
     }];
 }
 
+- (NSString *)tokenWithScope:(NSString *)scope
+{
+    QiniuPutPolicy *policy = [QiniuPutPolicy new];
+    policy.scope = scope;
+    return [policy makeToken:QiniuAccessKey secretKey:QiniuSecretKey];
+    
+}
+
+
+
 #pragma mark - eventRespond
 
 - (IBAction)refreshAction:(UIBarButtonItem *)sender {
@@ -89,6 +104,24 @@
     
 }
 
+- (IBAction)synchronizationAction:(UIBarButtonItem *)sender {
+    
+    //44j5VjQZJgrDXeZbA4_-ii6edzqoCe_sGB8vNO7y:J9IXVu231rxZ22JOHQLt5WdwkRQ=:eyJzY29wZSI6InhpYW5nemkiLCJkZWFkbGluZSI6MTQ2MDEyMjA0Nn0=
+    NSString *token = [self tokenWithScope:QiniuBucketName];
+    QNUploadManager *upManager = [[QNUploadManager alloc] init];
+    NSData *data = [@"llo, World!" dataUsingEncoding : NSUTF8StringEncoding];
+    [upManager putData:data key:@"hello" token:token complete:
+     ^(QNResponseInfo *info, NSString *key, NSDictionary *resp)
+    {
+        NSLog(@"%@", info);
+        NSLog(@"%@", resp);
+        
+        
+    } option:nil];
+    
+    
+    
+}
 
 
 #pragma mark - NSNotificationCenter

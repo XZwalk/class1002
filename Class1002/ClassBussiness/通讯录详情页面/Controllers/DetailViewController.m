@@ -9,6 +9,14 @@
 #import "DetailViewController.h"
 #import "Contact.h"
 #import "DataBaseHelper.h"
+#import "QiniuPutPolicy.h"
+#import <QiniuSDK.h>
+
+
+
+#define kDocumentsPath                      [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) objectAtIndex:0]
+
+
 @interface DetailViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 
@@ -47,11 +55,75 @@
 //        self.contact.con_image = self.imageView.image;
         self.contact.con_phone = self.phone.text;
         
+        
+        [self uploadContactImageWith:self.contact];
+        
+        
         [DataBaseHelper updateContact:self.contact withSourceName:sourceName];
         //更新数据库
         //[DataBaseHelper updateDataBaseWithContact:self.contact];
     }
 }
+
+- (NSString *)tokenWithScope:(NSString *)scope
+{
+    QiniuPutPolicy *policy = [QiniuPutPolicy new];
+    policy.scope = scope;
+    return [policy makeToken:QiniuAccessKey secretKey:QiniuSecretKey];
+    
+}
+
+
+
+- (void)uploadContactImageWith:(Contact *)contact {
+    
+    
+    UIImage *image = self.imageView.image;
+    
+    
+    
+    
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+    
+    NSString *key = [NSString stringWithFormat:@"addressBook_%@.jpg", contact.con_imageStr];
+    
+    
+    NSString *uniqueName = [QiniuBucketName stringByAppendingString:[NSString stringWithFormat:@":%@", key]];
+
+    
+    
+    
+    NSString *uniquePath = [kDocumentsPath stringByAppendingPathComponent:uniqueName];
+    
+    NSLog(@"uniquePath: %@",uniquePath);
+    
+    [imageData writeToFile:uniquePath atomically:NO];
+    
+
+    
+    NSData *data = [NSData dataWithContentsOfFile:uniquePath];
+
+
+    
+    NSString *token = [self tokenWithScope:uniqueName];
+    QNUploadManager *upManager = [[QNUploadManager alloc] init];
+    [upManager putData:data key:key token:token complete:
+     ^(QNResponseInfo *info, NSString *key, NSDictionary *resp)
+     {
+         NSLog(@"%@", info);
+         NSLog(@"%@", resp);
+         
+         
+     } option:nil];
+    
+    
+    
+    
+}
+
+
+
+
 //控制控件是否可交互
 - (void)dependUserInterationEnabled:(BOOL)enabled {
     self.imageView.userInteractionEnabled = enabled;

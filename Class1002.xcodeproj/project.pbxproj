@@ -16,6 +16,7 @@
 		FE641D5F1CA5907D007BA170 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE641D5C1CA5907D007BA170 /* ProgressHUD.bundle */; };
 		FE641D601CA5907D007BA170 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FE641D5E1CA5907D007BA170 /* ProgressHUD.m */; };
 		FE779C681CA77E4F00728B1F /* ContactServer.m in Sources */ = {isa = PBXBuildFile; fileRef = FE779C671CA77E4F00728B1F /* ContactServer.m */; };
+		FE858C8C1CB7FF29005766BD /* QiniuPutPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE858C8B1CB7FF29005766BD /* QiniuPutPolicy.m */; };
 		FE88E2C81CA82241009F0CE9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88E2C71CA82241009F0CE9 /* Tools.m */; };
 		FE88E2CC1CA82435009F0CE9 /* HXInitializeInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE88E2CB1CA82435009F0CE9 /* HXInitializeInfoManager.m */; };
 		FE8F2C281CA6A47C0094D195 /* AddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F2C271CA6A47C0094D195 /* AddressListViewController.m */; };
@@ -96,6 +97,8 @@
 		FE641D5E1CA5907D007BA170 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		FE779C661CA77E4F00728B1F /* ContactServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactServer.h; sourceTree = "<group>"; };
 		FE779C671CA77E4F00728B1F /* ContactServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactServer.m; sourceTree = "<group>"; };
+		FE858C8A1CB7FF29005766BD /* QiniuPutPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiniuPutPolicy.h; sourceTree = "<group>"; };
+		FE858C8B1CB7FF29005766BD /* QiniuPutPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiniuPutPolicy.m; sourceTree = "<group>"; };
 		FE88E2C61CA82241009F0CE9 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		FE88E2C71CA82241009F0CE9 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		FE88E2C91CA82283009F0CE9 /* RequestUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestUrl.h; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 				FE1A020C1CA2E2EA00A6319A /* AppDelegate.m */,
 				FE88E2CA1CA82435009F0CE9 /* HXInitializeInfoManager.h */,
 				FE88E2CB1CA82435009F0CE9 /* HXInitializeInfoManager.m */,
+				FE858C8A1CB7FF29005766BD /* QiniuPutPolicy.h */,
+				FE858C8B1CB7FF29005766BD /* QiniuPutPolicy.m */,
 				FE8F2C211CA6A41E0094D195 /* ClassBussiness */,
 				FE8F2C331CA6E12B0094D195 /* Others */,
 				FED0B7031CA5628D00C274B9 /* Controllers */,
@@ -840,6 +845,7 @@
 				FED1E7E11CAEAEBE00976B64 /* ShareListCell.m in Sources */,
 				FED1E7E81CAEB4C300976B64 /* ShareListDetailViewController.m in Sources */,
 				FED0B7171CA5635800C274B9 /* BaseNavigationController.m in Sources */,
+				FE858C8C1CB7FF29005766BD /* QiniuPutPolicy.m in Sources */,
 				FE88E2C81CA82241009F0CE9 /* Tools.m in Sources */,
 				FED2765D1CAACA890022A07A /* UIImage+MultiFormat.m in Sources */,
 				FED2765E1CAACA890022A07A /* UIImage+WebP.m in Sources */,

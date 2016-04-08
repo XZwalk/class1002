@@ -100,6 +100,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WSv-8N-GIv">
+                        <barButtonItem key="leftBarButtonItem" title="同步" id="wEd-Dh-6RU">
+                            <connections>
+                                <action selector="synchronizationAction:" destination="05F-lG-Pnv" id="bWB-5J-RWe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="刷新" id="M80-bu-mis">
                             <connections>
                                 <action selector="refreshAction:" destination="05F-lG-Pnv" id="l7I-28-43W"/>

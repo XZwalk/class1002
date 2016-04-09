@@ -46,7 +46,7 @@
         //当点击Done时，取消编辑状态，保存数据
         //保存修改之前的名字
         //当contact对象重新修改con_name,setter方法内部会对原有的对象release，原有对象空间回收，为了防止以后出现野指针问题。
-        NSString *sourceName = self.contact.con_name;
+//        NSString *sourceName = self.name.text;
         //修改内存数据
         self.contact.con_name = self.name.text;
 //        self.contact.con_gendar = self.gendar.text;
@@ -59,9 +59,9 @@
         [self uploadContactImageWith:self.contact];
         
         
-        [DataBaseHelper updateContact:self.contact withSourceName:sourceName];
+//        [DataBaseHelper updateContact:self.contact withSourceName:sourceName];
         //更新数据库
-        //[DataBaseHelper updateDataBaseWithContact:self.contact];
+        [DataBaseHelper updateDataBaseWithContact:self.contact];
     }
 }
 
@@ -117,7 +117,11 @@
      } option:nil];
     
     
+    NSString *timeStr = [Tools getTimestampStr];
+    contact.con_imageTagStr = timeStr;
     
+    [DataBaseHelper updateDataBaseWithContact:self.contact];
+
     
 }
 

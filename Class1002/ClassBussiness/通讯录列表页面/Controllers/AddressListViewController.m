@@ -44,6 +44,12 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -107,10 +113,16 @@
 - (IBAction)synchronizationAction:(UIBarButtonItem *)sender {
     
     //44j5VjQZJgrDXeZbA4_-ii6edzqoCe_sGB8vNO7y:J9IXVu231rxZ22JOHQLt5WdwkRQ=:eyJzY29wZSI6InhpYW5nemkiLCJkZWFkbGluZSI6MTQ2MDEyMjA0Nn0=
-    NSString *token = [self tokenWithScope:QiniuBucketName];
+    
+    NSString *key = @"xiangzi:addressBook.sqlite";
+
+    NSString *token = [self tokenWithScope:key];
+    
+    NSString *filePath = [self dataBasePath];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+
     QNUploadManager *upManager = [[QNUploadManager alloc] init];
-    NSData *data = [@"llo, World!" dataUsingEncoding : NSUTF8StringEncoding];
-    [upManager putData:data key:@"hello" token:token complete:
+    [upManager putData:data key:@"addressBook.sqlite" token:token complete:
      ^(QNResponseInfo *info, NSString *key, NSDictionary *resp)
     {
         NSLog(@"%@", info);
@@ -123,7 +135,13 @@
     
 }
 
-
+//获取数据库路径
+- (NSString *)dataBasePath {
+    //1.获取document文件夹路径
+    NSString *documentpath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    //2.拼接上数据库文件路径
+    return [documentpath stringByAppendingPathComponent:kDataBaseName];
+}
 #pragma mark - NSNotificationCenter
 - (void)handleDataFinishNSNotification {
     [self.tableView reloadData];

@@ -14,7 +14,7 @@
 
 #define kRequestContactUrl         @"http://7xrdjn.com1.z0.glb.clouddn.com/addressBook.sqlite?v=%@"
 #define kRequestInitializeInfoUrl  @"http://7xrdjn.com1.z0.glb.clouddn.com/initializeInfo.txt?v=%@"
-#define kRequestImageUrl  @"http://7xrdjn.com1.z0.glb.clouddn.com/addressBook_%@.jpg"
+#define kRequestImageUrl  @"http://7xrdjn.com1.z0.glb.clouddn.com/addressBook_%@.jpg?v=%@"
 
 
 #define kRequestShareListUrl    @"http://7xsg4k.com1.z0.glb.clouddn.com/ios_shareListInfo.txt?v=%@"

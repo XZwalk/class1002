@@ -17,11 +17,12 @@
 @property (nonatomic, copy) NSString *con_phone;
 @property (nonatomic, copy) NSString *con_nowPlace;
 @property (nonatomic, copy) NSString *con_imageStr;
+@property (nonatomic, copy) NSString *con_imageTagStr;
 
 //提供自定义的初始化方法
-- (instancetype)initWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage conHaveFam:(NSInteger)conHaveFam;
+- (instancetype)initWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage conHaveFam:(NSInteger)conHaveFam conImageTag:(NSString *)conImageTag;
 //便利构造器
-+ (instancetype)contactWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage conHaveFam:(NSInteger)conHaveFam;
++ (instancetype)contactWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage conHaveFam:(NSInteger)conHaveFam conImageTag:(NSString *)conImageTag;
 
 
 

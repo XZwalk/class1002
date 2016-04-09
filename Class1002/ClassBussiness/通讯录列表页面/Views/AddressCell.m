@@ -18,7 +18,7 @@
     //为自身控件赋值
     
 //    NSString *timeStr = [Tools getTimestampStr];
-    NSString *urlStr = [NSString stringWithFormat:kRequestImageUrl, contact.con_imageStr];
+    NSString *urlStr = [NSString stringWithFormat:kRequestImageUrl, contact.con_imageStr, contact.con_imageTagStr];
     NSURL *url = [NSURL URLWithString:urlStr];
     
     //480*640   60*80

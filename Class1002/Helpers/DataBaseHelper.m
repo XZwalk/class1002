@@ -87,6 +87,7 @@ static DataBaseHelper *helper = nil;
         char *con_nowPlace = (char *)sqlite3_column_text(stmt, 4);
         char *con_image = (char *)sqlite3_column_text(stmt, 5);
         char *con_section = (char *)sqlite3_column_text(stmt, 1);
+        char *con_imageTag = (char *)sqlite3_column_text(stmt, 7);
 
         //将C语言字符串转为OC字符串对象
         NSString *name = [NSString stringWithUTF8String:con_name];
@@ -94,8 +95,9 @@ static DataBaseHelper *helper = nil;
         NSString *nowPlace = [NSString stringWithUTF8String:con_nowPlace];
         NSString *phone = [NSString stringWithUTF8String:con_phone];
         NSString *imageStr = [NSString stringWithUTF8String:con_image];
+        NSString *imageTagStr = [NSString stringWithUTF8String:con_imageTag];
 
-        Contact *contact = [Contact contactWithConID:iD conName:name conSection:section conPhone:phone conNowPlace:nowPlace conImage:imageStr conHaveFam:isHaveFam];
+        Contact *contact = [Contact contactWithConID:iD conName:name conSection:section conPhone:phone conNowPlace:nowPlace conImage:imageStr conHaveFam:isHaveFam conImageTag:imageTagStr];
         
 
         
@@ -266,10 +268,13 @@ static DataBaseHelper *helper = nil;
 ////更新数据库中的数据
 + (void)updateDataBaseWithContact:(Contact *)contact {
     sqlite3_stmt *stmt = [self createUpdateStatement];
-    
+    //这里的1,2,3,4是问号的索引, 索引从1开始, 必须与[self createUpdateStatement]方法中创建的sqlite语句中的问号一一对应, 不然肯定会更新失败.
     sqlite3_bind_text(stmt, 1, [contact.con_name UTF8String], -1, nil);
-    sqlite3_bind_text(stmt, 4, [contact.con_phone UTF8String], -1, nil);
-    sqlite3_bind_int(stmt, 7, (int)contact.con_id);
+    sqlite3_bind_text(stmt, 2, [contact.con_phone UTF8String], -1, nil);
+    sqlite3_bind_text(stmt, 3, [contact.con_nowPlace UTF8String], -1, nil);
+    sqlite3_bind_int(stmt, 5, (int)contact.con_id);
+    sqlite3_bind_text(stmt, 4, [contact.con_imageTagStr UTF8String], -1, nil);
+    
     if (sqlite3_step(stmt) == SQLITE_DONE) {
         NSLog(@"更新数据库");
     }
@@ -361,7 +366,8 @@ static DataBaseHelper *helper = nil;
 + (sqlite3_stmt *)createUpdateStatement {
     sqlite3 *db = [DataBase openDataBase];
     sqlite3_stmt *stmt = nil;
-    NSString *createUpdateSQL = @"update Contact set con_name = ?, con_gendar = ?, con_age = ? con_phone = ?, con_motto = ?, con_image = ? where con_id = ?";
+    //@"update cailiao1002 set name = ?, phone = ?, section = ?, nowPlace = ?, isHaveFamily = ?, photoTag = ?, photo = ? where id = ?";
+    NSString *createUpdateSQL = @"update cailiao1002 set name = ?, phone = ?, nowPlace = ?, photoTag = ? where id = ?";
     int flag = sqlite3_prepare_v2(db, [createUpdateSQL UTF8String], -1, &stmt, nil);
     if (SQLITE_OK == flag) {
         return stmt;

@@ -10,7 +10,7 @@
 
 @implementation Contact
 //提供自定义的初始化方法
-- (instancetype)initWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage conHaveFam:(NSInteger)conHaveFam {
+- (instancetype)initWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage conHaveFam:(NSInteger)conHaveFam conImageTag:(NSString *)conImageTag {
     self = [super init];
     if (self) {
         self.con_id = conID;
@@ -20,12 +20,13 @@
         self.con_phone = conPhone;
         self.con_nowPlace = conNowPlace;
         self.con_isHaveFamily = conHaveFam;
+        self.con_imageTagStr = conImageTag;
     }
     return self;
 }
 //便利构造器
-+ (instancetype)contactWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage conHaveFam:(NSInteger)conHaveFam {
-    return [[Contact alloc] initWithConID:conID conName:conName conSection:conSection conPhone:conPhone conNowPlace:conNowPlace conImage:conImage conHaveFam:conHaveFam];
++ (instancetype)contactWithConID:(NSInteger)conID conName:(NSString *)conName conSection:(NSString *)conSection conPhone:(NSString *)conPhone conNowPlace:(NSString *)conNowPlace conImage:(NSString *)conImage conHaveFam:(NSInteger)conHaveFam conImageTag:(NSString *)conImageTag {
+    return [[Contact alloc] initWithConID:conID conName:conName conSection:conSection conPhone:conPhone conNowPlace:conNowPlace conImage:conImage conHaveFam:conHaveFam conImageTag:conImageTag];
 }
 
 
